@@ -9,3 +9,20 @@ img {
   display: block;
   max-width: 100%;
 }
+
+/* ===== PROMĚNNÉ ===== */
+:root {
+  /* Akcenty */
+  --accent: #e08a4c;
+  --accent-hover: #b5663a;
+
+  /* Pozadí */
+  --bg: #1c2025;
+  --bg-dark: #141719;
+  --bg-light: #242a31;
+
+  /* Text */
+  --text: #e8e2d8;
+  --text-strong: #ffffff;
+  --text-muted: #a8aeb5;
+}
