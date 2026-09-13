@@ -175,8 +175,9 @@ nav a[aria-current="page"] {
 }
 
 .hero p:not(.eyebrow) {
-  /* popisný odstavec pod H1 (např. na sprava.html) ve stejné barvě jako nadpis */
+  /* popisný odstavec pod H1 (např. na kontakt.html) ve stejné barvě jako nadpis */
   color: var(--text-strong);
+  font-size: 20px;
 }
 
 .btn {
@@ -231,6 +232,15 @@ nav a[aria-current="page"] {
   height: 100px;
   background-color: var(--bg);
   clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+/* kompaktní varianta hero (kontakt.html) - menší odsazení a nižší diagonála */
+.hero--kompakt {
+  padding: 160px 20px 100px;
+}
+
+.hero--kompakt::after {
+  height: 70px;
 }
 
 /*  SEKCE JAK TO FUNGUJE  */
@@ -730,6 +740,122 @@ footer a:hover {
   color: var(--accent);
 }
 
+/*  SEKCE JAK MĚ KONTAKTOVAT (kontakt.html)  */
+.kontakt-info {
+  padding: 90px 0;
+}
+
+.kontakt-info .container {
+  display: block;
+}
+
+.kontakt-info .eyebrow {
+  text-align: center;
+}
+
+.kontakt-karty {
+  margin-top: 40px;
+}
+
+.kontakt-karty .karta {
+  /* obsah karty včetně ikony vycentrovaný */
+  text-align: center;
+}
+
+.kontakt-karty .karta svg {
+  /* ikona uprostřed karty */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.kontakt-karty .karta h3 {
+  /* méně těžký nadpis */
+  font-weight: 500;
+}
+
+.kontakt-karty .karta a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.kontakt-karty .karta a:hover {
+  color: var(--accent);
+}
+
+/*  SEKCE ČASTÉ OTÁZKY (kontakt.html)  */
+.faq {
+  /* pozadí odlišené od okolních sekcí */
+  background-color: var(--bg-light);
+  padding: 90px 0;
+}
+
+.faq .container {
+  display: block;
+}
+
+details {
+  background-color: var(--bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  margin-bottom: 16px;
+}
+
+details:last-child {
+  margin-bottom: 0;
+}
+
+summary {
+  /* bez výchozí značky prohlížeče */
+  list-style: none;
+  cursor: pointer;
+  font-weight: 700;
+  padding: 20px 24px;
+  position: relative;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  /* oranžová šipka, otočí se při otevření */
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--accent);
+  border-bottom: 2px solid var(--accent);
+  transform: translateY(-50%) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+details[open] summary::after {
+  transform: translateY(-50%) rotate(225deg);
+}
+
+details p {
+  padding: 0 24px 24px;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+/*  SEKCE PROVOZOVATEL (kontakt.html)  */
+.provozovatel {
+  padding: 90px 0;
+}
+
+.provozovatel .container {
+  display: block;
+}
+
+.provozovatel .poznamka {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
 /*  RESPONZIVITA HLAVIČKY A HERO SEKCE  */
 @media (max-width: 900px) {
   nav {
@@ -773,6 +899,14 @@ footer a:hover {
   .hero::after {
     /* na mobilu nižší, aby diagonála nebyla příliš strmá */
     height: 40px;
+  }
+
+  .hero--kompakt {
+    padding: 120px 20px 60px;
+  }
+
+  .hero--kompakt::after {
+    height: 35px;
   }
 
   .jak-to-funguje .container {
