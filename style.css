@@ -69,13 +69,27 @@ p {
 
 /*  HLAVIČKA  */
 header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 10;
   /* aby logo a menu nebyly nalepené na horním okraji */
   padding-top: 20px;
+  transition:
+    background-color 0.25s ease,
+    padding 0.25s ease;
+}
+
+header.scrolled {
+  /* po odscrollování pevné pozadí, jemný rámeček a nižší hlavička */
+  background-color: var(--bg-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 10px;
+}
+
+header.scrolled .container {
+  padding: 12px 20px;
 }
 
 .container {
@@ -89,6 +103,11 @@ header {
 
 .logo img {
   max-width: 115px;
+  transition: max-width 0.25s ease;
+}
+
+header.scrolled .logo img {
+  max-width: 95px;
 }
 
 nav ul {
@@ -858,6 +877,23 @@ details p {
 
 /*  RESPONZIVITA HLAVIČKY A HERO SEKCE  */
 @media (max-width: 900px) {
+  header {
+    /* nižší hlavička i v základním stavu */
+    padding-top: 12px;
+  }
+
+  header .container {
+    padding: 12px 20px;
+  }
+
+  .logo img {
+    max-width: 95px;
+  }
+
+  header.scrolled .logo img {
+    max-width: 85px;
+  }
+
   nav {
     /* skryto, dokud se nerozbalí přes hamburger */
     display: none;
