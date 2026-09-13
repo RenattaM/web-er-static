@@ -2,9 +2,26 @@
 const hamburger = document.querySelector(".hamburger");
 const nav = document.querySelector("header nav");
 
+function zavritMenu() {
+  nav.classList.remove("otevrena");
+  hamburger.setAttribute("aria-expanded", "false");
+  hamburger.setAttribute("aria-label", "Otevřít menu");
+}
+
 hamburger.addEventListener("click", () => {
-  nav.classList.toggle("otevrena");
-  hamburger.setAttribute("aria-expanded", nav.classList.contains("otevrena"));
+  const otevrene = nav.classList.toggle("otevrena");
+  hamburger.setAttribute("aria-expanded", otevrene);
+  hamburger.setAttribute(
+    "aria-label",
+    otevrene ? "Zavřít menu" : "Otevřít menu",
+  );
+});
+
+// po kliknutí na odkaz v menu se menu zavře (event delegace na nav)
+nav.addEventListener("click", (e) => {
+  if (e.target.closest("a")) {
+    zavritMenu();
+  }
 });
 
 // FAQ - při otevření jedné otázky se ostatní zavřou

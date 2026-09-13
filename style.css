@@ -39,7 +39,7 @@ body {
     system-ui,
     -apple-system,
     sans-serif;
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.6;
 }
 
@@ -53,15 +53,15 @@ h3 {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 2.5rem;
 }
 
 h2 {
-  font-size: 28px;
+  font-size: 1.75rem;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 p {
   margin-bottom: 16px;
@@ -102,12 +102,12 @@ header.scrolled .container {
 }
 
 .logo img {
-  max-width: 115px;
+  max-width: 90px;
   transition: max-width 0.25s ease;
 }
 
 header.scrolled .logo img {
-  max-width: 95px;
+  max-width: 75px;
 }
 
 nav ul {
@@ -122,7 +122,7 @@ nav a {
   text-decoration: none;
   font-family: var(--font-heading);
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1rem;
   letter-spacing: 0.02em;
   /* trvalá rezerva místa pro linku, aby text při hoveru neposkakoval */
   padding-bottom: 4px;
@@ -162,7 +162,6 @@ nav a[aria-current="page"] {
 
 /*  HERO / ÚVOD  */
 .hero {
-  /* plastičtější přechod - tři barevné body, pravá strana znatelně tmavší */
   background: linear-gradient(
     100deg,
     var(--accent) 0%,
@@ -181,22 +180,20 @@ nav a[aria-current="page"] {
   text-transform: uppercase;
   font-family: var(--font-heading);
   letter-spacing: 4px;
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
   margin-bottom: 16px;
 }
 
 .hero h1 {
-  /* bílá a větší než výchozí h1 */
   color: var(--text-strong);
-  font-size: 56px;
+  font-size: 3.5rem;
   margin-bottom: 32px;
 }
 
 .hero p:not(.eyebrow) {
-  /* popisný odstavec pod H1 (např. na kontakt.html) ve stejné barvě jako nadpis */
   color: var(--text-strong);
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .btn {
@@ -208,7 +205,7 @@ nav a[aria-current="page"] {
   text-decoration: none;
   font-family: var(--font-heading);
   font-weight: 500;
-  font-size: 18px;
+  font-size: 1.125rem;
   letter-spacing: 0.5px;
   padding: 14px 44px;
   border: 2px solid var(--text-strong);
@@ -219,7 +216,6 @@ nav a[aria-current="page"] {
 }
 
 .btn svg {
-  /* ikona šipky přebírá barvu textu přes currentColor */
   width: 18px;
   height: 18px;
   stroke-width: 2.5;
@@ -245,7 +241,7 @@ nav a[aria-current="page"] {
   /* diagonální řez na spodní hraně hera - přechod do další sekce */
   content: "";
   position: absolute;
-  bottom: -1px; /* zamezí vlasové spáře mezi hero a další sekcí */
+  bottom: -1px;
   left: 0;
   width: 100%;
   height: 100px;
@@ -253,7 +249,7 @@ nav a[aria-current="page"] {
   clip-path: polygon(0 100%, 100% 0, 100% 100%);
 }
 
-/* kompaktní varianta hero (kontakt.html) - menší odsazení a nižší diagonála */
+/* kompaktní varianta hero (kontakt.html)*/
 .hero--kompakt {
   padding: 160px 20px 100px;
 }
@@ -268,7 +264,6 @@ nav a[aria-current="page"] {
 }
 
 .jak-to-funguje .container {
-  /* dvousloupcový layout - obrázek a text vedle sebe */
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -301,7 +296,7 @@ nav a[aria-current="page"] {
   color: var(--accent);
 }
 
-/* seznam s oranžovým zaškrtnutým kolečkem - sdílená třída napříč stránkami */
+/* seznam s oranžovým zaškrtnutým kolečkem */
 .seznam-check {
   list-style: none;
 }
@@ -333,7 +328,7 @@ nav a[aria-current="page"] {
   border-radius: 50%;
   background-color: var(--accent);
   color: var(--bg-dark);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -353,6 +348,7 @@ nav a[aria-current="page"] {
 .sluzby {
   /* pozadí odlišené od okolních sekcí */
   background-color: var(--bg-light);
+  /* menší odsazení - zkosení nahoře i dole zabírá vlastní výšku */
   padding: 90px 0;
   /* kotva pro diagonální zkosení nahoře i dole (::before, ::after) */
   position: relative;
@@ -429,20 +425,20 @@ nav a[aria-current="page"] {
 
 .karta h3 {
   color: var(--accent);
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .karta p {
   color: var(--text-muted);
-  font-size: 15px;
+  font-size: 0.9375rem;
   margin-bottom: 0;
 }
 
 /*  SEKCE PÉČE  */
 .pece {
   background-color: var(--bg-dark);
-  /* větší spodní odsazení, aby zkosení nezasahovalo do tlačítka */
-  padding: 90px 0 140px;
+  /* menší spodní odsazení - zkosení dole zabírá vlastní výšku */
+  padding: 90px 0 60px;
   /* kotva pro diagonální zkosení na spodní hraně (::after) */
   position: relative;
 }
@@ -469,7 +465,7 @@ nav a[aria-current="page"] {
 }
 
 .pece .poznamka {
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--text-muted);
   margin-bottom: 32px;
 }
@@ -542,7 +538,7 @@ nav a[aria-current="page"] {
 
 .reference-karta p {
   color: var(--text-muted);
-  font-size: 16px;
+  font-size: 1rem;
   margin-bottom: 0;
 }
 
@@ -570,7 +566,7 @@ nav a[aria-current="page"] {
 
 .cta h2 {
   color: #ffffff;
-  font-size: 34px;
+  font-size: 2.125rem;
   margin-bottom: 32px;
 }
 
@@ -580,7 +576,7 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding: 40px 0;
   text-align: center;
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--text-muted);
 }
 
@@ -616,7 +612,7 @@ footer a:hover {
 
 .textova-stranka h2 {
   color: var(--accent);
-  font-size: 24px;
+  font-size: 1.5rem;
   margin-top: 40px;
 }
 
@@ -653,7 +649,7 @@ footer a:hover {
 #varianty .poznamka {
   /* menší text s odstupem od karet */
   margin-top: 24px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--text-muted);
 }
 
@@ -686,7 +682,7 @@ footer a:hover {
   align-self: flex-start;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 700;
   color: var(--text-muted);
   border: 1px solid var(--text-muted);
@@ -709,6 +705,7 @@ footer a:hover {
 /*  SEKCE S ČÍM SE LIDI OZÝVAJÍ - stejné pozadí a zkosení jako .sluzby na indexu  */
 .dotazy {
   background-color: var(--bg-light);
+  /* menší odsazení - zkosení nahoře i dole zabírá vlastní výšku */
   padding: 90px 0;
   position: relative;
 }
@@ -748,7 +745,7 @@ footer a:hover {
 
 /*  SEKCE PROČ HLÍDAT (sprava.html)  */
 .proc-hlidat {
-  padding: 90px 0;
+  padding: 60px 0;
 }
 
 .proc-hlidat .container {
@@ -762,7 +759,22 @@ footer a:hover {
 
 /*  SEKCE JAK MĚ KONTAKTOVAT (kontakt.html)  */
 .kontakt-info {
+  /* menší spodní odsazení - zkosení dole zabírá vlastní výšku */
   padding: 90px 0;
+  /* kotva pro diagonální zkosení na spodní hraně (::after) */
+  position: relative;
+}
+
+.kontakt-info::after {
+  /* stejný směr zkosení jako ostatní - barva odpovídá pozadí .faq pod sekcí */
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 71px;
+  background-color: var(--bg-light);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
 }
 
 .kontakt-info .container {
@@ -806,7 +818,7 @@ footer a:hover {
 .faq {
   /* pozadí odlišené od okolních sekcí */
   background-color: var(--bg-light);
-  padding: 90px 0;
+  padding: 60px 0;
 }
 
 .faq .container {
@@ -871,7 +883,7 @@ details p {
 }
 
 .provozovatel .poznamka {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--text-muted);
   margin-bottom: 0;
 }
@@ -898,7 +910,7 @@ details p {
 }
 
 .cookie-lista__obsah p {
-  font-size: 15px;
+  font-size: 0.9375rem;
   color: var(--text-muted);
   margin-bottom: 0;
 }
@@ -906,7 +918,7 @@ details p {
 .cookie-lista__obsah > a,
 .cookie-lista__obsah > span {
   flex-shrink: 0;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--text-muted);
   text-decoration: none;
 }
@@ -925,7 +937,7 @@ details p {
   /* stejný tvar jako .btn, jen menší */
   font-family: var(--font-heading);
   font-weight: 500;
-  font-size: 15px;
+  font-size: 0.9375rem;
   padding: 10px 24px;
   border-radius: 999px;
   cursor: pointer;
@@ -976,6 +988,20 @@ details p {
 
 /*  RESPONZIVITA HLAVIČKY A HERO SEKCE  */
 @media (max-width: 900px) {
+  .jak-to-funguje,
+  .reference,
+  .proc-hlidat,
+  .faq,
+  .kontakt-info,
+  #varianty {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+  .provozovatel {
+    padding: 40px 0;
+  }
+
   header {
     /* nižší hlavička i v základním stavu */
     padding-top: 12px;
@@ -986,11 +1012,11 @@ details p {
   }
 
   .logo img {
-    max-width: 95px;
+    max-width: 75px;
   }
 
   header.scrolled .logo img {
-    max-width: 85px;
+    max-width: 65px;
   }
 
   nav {
@@ -1028,7 +1054,7 @@ details p {
   }
 
   .hero h1 {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 
   .hero::after {
@@ -1080,6 +1106,11 @@ details p {
 
   .dotazy::before,
   .dotazy::after {
+    /* na mobilu kratší zkosení */
+    height: 36px;
+  }
+
+  .kontakt-info::after {
     /* na mobilu kratší zkosení */
     height: 36px;
   }
