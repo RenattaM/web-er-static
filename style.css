@@ -272,42 +272,28 @@ nav a[aria-current="page"] {
   color: var(--accent);
 }
 
-/* seznam s oranžovým zaškrtnutým kolečkem - sdíleno sekcemi .jak-to-funguje a .pece */
-.jak-to-funguje ul,
-.pece ul {
+/* seznam s oranžovým zaškrtnutým kolečkem - sdílená třída napříč stránkami */
+.seznam-check {
   list-style: none;
 }
 
-.jak-to-funguje ul {
-  margin-bottom: 32px;
-}
-
-.pece ul {
-  /* mezera mezi odrážkami a poznámkou */
-  margin-bottom: 24px;
-}
-
-.jak-to-funguje ul li,
-.pece ul li {
+.seznam-check li {
   position: relative;
   padding-left: 32px;
   color: var(--text-muted);
   margin-bottom: 10px;
 }
 
-.jak-to-funguje ul li:last-child,
-.pece ul li:last-child {
+.seznam-check li:last-child {
   margin-bottom: 0;
 }
 
-.jak-to-funguje ul li strong,
-.pece ul li strong {
+.seznam-check li strong {
   color: var(--text-strong);
   font-weight: 700;
 }
 
-.jak-to-funguje ul li::before,
-.pece ul li::before {
+.seznam-check li::before {
   /* ikona zaškrtnutého kolečka místo puntíku */
   content: "✓";
   position: absolute;
@@ -323,6 +309,15 @@ nav a[aria-current="page"] {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.jak-to-funguje .seznam-check {
+  margin-bottom: 32px;
+}
+
+.pece .seznam-check {
+  /* mezera mezi odrážkami a poznámkou */
+  margin-bottom: 24px;
 }
 
 /*  SEKCE SLUŽBY  */
@@ -677,38 +672,8 @@ footer a:hover {
   border-color: var(--accent);
 }
 
-.varianta ul {
-  /* stejný seznam se zaškrtnutým kolečkem jako v .jak-to-funguje a .pece */
-  list-style: none;
+.varianta .seznam-check {
   margin-bottom: 24px;
-}
-
-.varianta ul li {
-  position: relative;
-  padding-left: 32px;
-  color: var(--text-muted);
-  margin-bottom: 10px;
-}
-
-.varianta ul li:last-child {
-  margin-bottom: 0;
-}
-
-.varianta ul li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: var(--accent);
-  color: var(--bg-dark);
-  font-size: 12px;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 /*  SEKCE S ČÍM SE LIDI OZÝVAJÍ - stejné pozadí a zkosení jako .sluzby na indexu  */
