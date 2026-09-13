@@ -14,6 +14,7 @@ img {
 :root {
   /* Akcenty */
   --accent: #e08a4c;
+  --accent-mid: #ca7843;
   --accent-hover: #b5663a;
 
   /* Pozadí */
@@ -141,7 +142,13 @@ nav a[aria-current="page"] {
 
 /*  HERO / ÚVOD  */
 .hero {
-  background: linear-gradient(180deg, var(--accent), var(--accent-hover));
+  /* plastičtější přechod - tři barevné body, pravá strana znatelně tmavší */
+  background: linear-gradient(
+    100deg,
+    var(--accent) 0%,
+    var(--accent-mid) 55%,
+    var(--accent-hover) 100%
+  );
   color: #20160f;
   text-align: center;
   padding: 200px 20px 140px;
