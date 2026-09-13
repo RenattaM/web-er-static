@@ -174,6 +174,11 @@ nav a[aria-current="page"] {
   margin-bottom: 32px;
 }
 
+.hero p:not(.eyebrow) {
+  /* popisný odstavec pod H1 (např. na sprava.html) ve stejné barvě jako nadpis */
+  color: var(--text-strong);
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -545,6 +550,221 @@ nav a[aria-current="page"] {
   margin-bottom: 32px;
 }
 
+/*  PATIČKA  */
+footer {
+  background-color: var(--bg-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px 0;
+  text-align: center;
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+footer .container {
+  /* zděděný .container je flex - tady potřebujeme blokové řazení */
+  display: block;
+}
+
+footer p {
+  margin-bottom: 0;
+}
+
+footer a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--accent);
+}
+
+/*  TEXTOVÁ STRÁNKA (zásady ochrany osobních údajů apod.)  */
+.textova-stranka {
+  /* dost místa, aby obsah nezmizel pod absolutně umístěnou hlavičkou */
+  padding: 180px 0 90px;
+}
+
+.textova-stranka .container {
+  display: block;
+  max-width: 800px;
+}
+
+.textova-stranka h2 {
+  color: var(--accent);
+  font-size: 24px;
+  margin-top: 40px;
+}
+
+.textova-stranka ul {
+  list-style: disc;
+  padding-left: 24px;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.textova-stranka li {
+  margin-bottom: 8px;
+}
+
+.textova-stranka a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/*  SEKCE DVĚ VARIANTY (sprava.html)  */
+#varianty {
+  padding: 90px 0;
+}
+
+#varianty .container {
+  /* zděděný .container je flex - tady potřebujeme blokové řazení obsahu */
+  display: block;
+}
+
+#varianty h2 {
+  color: var(--accent);
+}
+
+#varianty .poznamka {
+  /* menší text s odstupem od karet */
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.varianty {
+  /* dvě karty vedle sebe */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.varianta {
+  background-color: var(--bg-light);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 34px;
+  /* poznámka dole se pak přitáhne pomocí margin-top: auto */
+  display: flex;
+  flex-direction: column;
+}
+
+.varianta--hlavni {
+  /* zvýrazněná varianta - oranžový rámeček */
+  border: 2px solid var(--accent);
+}
+
+.stitek {
+  /* malý štítek nad nadpisem karty */
+  display: inline-block;
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-muted);
+  border: 1px solid var(--text-muted);
+  border-radius: 999px;
+  padding: 6px 14px;
+  margin-bottom: 20px;
+}
+
+.varianta--hlavni .stitek {
+  /* v hlavní variantě oranžový štítek s tmavým textem */
+  color: var(--bg-dark);
+  background-color: var(--accent);
+  border-color: var(--accent);
+}
+
+.varianta ul {
+  /* stejný seznam se zaškrtnutým kolečkem jako v .jak-to-funguje a .pece */
+  list-style: none;
+  margin-bottom: 24px;
+}
+
+.varianta ul li {
+  position: relative;
+  padding-left: 32px;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.varianta ul li:last-child {
+  margin-bottom: 0;
+}
+
+.varianta ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--accent);
+  color: var(--bg-dark);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*  SEKCE S ČÍM SE LIDI OZÝVAJÍ - stejné pozadí a zkosení jako .sluzby na indexu  */
+.dotazy {
+  background-color: var(--bg-light);
+  padding: 90px 0;
+  position: relative;
+}
+
+.dotazy::before,
+.dotazy::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  /* o 1px vyšší kvůli přesahu přes hranu - zamezí vlasové spáře */
+  height: 71px;
+  background-color: var(--bg);
+}
+
+.dotazy::before {
+  top: -1px;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.dotazy::after {
+  bottom: -1px;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+.dotazy .container {
+  display: block;
+}
+
+.dotazy .eyebrow {
+  color: var(--accent);
+}
+
+.dotazy h2 {
+  margin-bottom: 40px;
+}
+
+/*  SEKCE PROČ HLÍDAT (sprava.html)  */
+.proc-hlidat {
+  padding: 90px 0;
+}
+
+.proc-hlidat .container {
+  display: block;
+  max-width: 800px;
+}
+
+.proc-hlidat h2 {
+  color: var(--accent);
+}
+
 /*  RESPONZIVITA HLAVIČKY A HERO SEKCE  */
 @media (max-width: 900px) {
   nav {
@@ -615,6 +835,17 @@ nav a[aria-current="page"] {
   }
 
   .pece::after {
+    /* na mobilu kratší zkosení */
+    height: 36px;
+  }
+
+  .varianty {
+    /* karty na mobilu pod sebou */
+    grid-template-columns: 1fr;
+  }
+
+  .dotazy::before,
+  .dotazy::after {
     /* na mobilu kratší zkosení */
     height: 36px;
   }
