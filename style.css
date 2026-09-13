@@ -305,6 +305,93 @@ nav a[aria-current="page"] {
   justify-content: center;
 }
 
+/*  SEKCE SLUŽBY  */
+.sluzby {
+  /* pozadí odlišené od okolních sekcí */
+  background-color: var(--bg-light);
+  padding: 90px 0;
+  /* kotva pro diagonální zkosení nahoře i dole (::before, ::after) */
+  position: relative;
+}
+
+.sluzby::before,
+.sluzby::after {
+  /* diagonální zkosení - barva okolních sekcí prosvítá přes hranu */
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  /* o 1px vyšší kvůli přesahu přes hranu (viz top/bottom -1px) - zamezí vlasové spáře */
+  height: 71px;
+  background-color: var(--bg);
+}
+
+.sluzby::before {
+  top: -1px;
+  /* stejný směr zkosení jako dole - zleva doprava klesá */
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.sluzby::after {
+  bottom: -1px;
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+.sluzby .container {
+  /* zděděný .container je flex - tady potřebujeme blokové řazení nadpisů nad kartami */
+  display: block;
+}
+
+.sluzby .eyebrow {
+  /* velikost, prostrkání i font zůstávají po globálním .eyebrow, mění se jen barva */
+  color: var(--accent);
+}
+
+.sluzby h2 {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.karty {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.karta {
+  /* znatelně tmavší než pozadí sekce, aby karty vynikly */
+  background-color: var(--bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 28px;
+  transition: border-color 0.2s ease;
+}
+
+.karta:hover {
+  border-color: var(--accent);
+}
+
+.karta svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+  color: var(--accent);
+  stroke-width: 1.7;
+  margin-bottom: 16px;
+}
+
+.karta h3 {
+  color: var(--accent);
+  font-size: 18px;
+}
+
+.karta p {
+  color: var(--text-muted);
+  font-size: 15px;
+  margin-bottom: 0;
+}
+
 /*  RESPONZIVITA HLAVIČKY A HERO SEKCE  */
 @media (max-width: 900px) {
   nav {
@@ -358,5 +445,22 @@ nav a[aria-current="page"] {
   .jak-to-funguje img {
     /* na mobilu nižší */
     height: 260px;
+  }
+
+  .karty {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sluzby::before,
+  .sluzby::after {
+    /* na mobilu kratší zkosení, opět o 1px vyšší kvůli přesahu */
+    height: 36px;
+  }
+}
+
+/*  RESPONZIVITA SEKCE SLUŽBY - jeden sloupec  */
+@media (max-width: 620px) {
+  .karty {
+    grid-template-columns: 1fr;
   }
 }
