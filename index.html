@@ -11,33 +11,58 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <header>
-      <a href="index.html">
-        <img src="img/logo-web-er-bile.png" alt="web-eR" />
-      </a>
-      <nav>
-        <ul>
-          <li><a href="#uvod">Úvod</a></li>
-          <li><a href="#sluzby">Služby</a></li>
-          <li><a href="sprava.html">Správa a úpravy</a></li>
-          <li><a href="#reference">Reference</a></li>
-          <li><a href="kontakt.html#faq">Časté otázky</a></li>
-          <li><a href="kontakt.html">Kontakt</a></li>
-        </ul>
-      </nav>
+      <div class="container">
+        <a href="index.html" class="logo">
+          <img src="img/logo-web-er-bile.png" alt="web-eR" />
+        </a>
+        <nav>
+          <ul>
+            <li><a href="#uvod">Úvod</a></li>
+            <li><a href="#sluzby">Služby</a></li>
+            <li><a href="sprava.html">Správa a úpravy</a></li>
+            <li><a href="#reference">Reference</a></li>
+            <li><a href="kontakt.html#faq">Časté otázky</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </nav>
+        <button
+          class="hamburger"
+          aria-label="Otevřít menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </header>
     <main>
       <!--hero úvod-->
-      <section id="uvod">
-        <p>FREELANCER • WEBY • SPRÁVA</p>
-        <h1>Weby pro živnostníky a malé firmy</h1>
-        <a href="kontakt.html">Napište mi</a>
+      <section id="uvod" class="hero">
+        <p class="eyebrow">FREELANCER • WEBY • SPRÁVA</p>
+        <h1>Tvorba webů pro živnostníky a malé firmy</h1>
+        <a href="kontakt.html" class="btn">
+          Napište mi
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14" />
+            <path d="m12 5 7 7-7 7" />
+          </svg>
+        </a>
       </section>
       <section>
         <p>Jak to funguje</p>
@@ -131,5 +156,6 @@
     <footer>
       &copy; 2026 Renata Markusová | web - eR. Všechna práva vyhrazena.
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

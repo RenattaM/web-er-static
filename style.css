@@ -25,15 +25,9 @@ img {
   --text: #e8e2d8;
   --text-strong: #ffffff;
   --text-muted: #a8aeb5;
-  --font-heading: "Montserrat", system-ui, sans-serif;
-}
 
-/*  TYPOGRAFIE  */
-h1,
-h2,
-h3 {
-  font-family: var(--font-heading);
-  line-height: 1.2;
+  /* PÍSMO */
+  --font-heading: "Montserrat", system-ui, sans-serif;
 }
 
 /*  BODY  */
@@ -45,4 +39,218 @@ body {
     -apple-system,
     sans-serif;
   line-height: 1.6;
+}
+
+/*  TYPOGRAFIE  */
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 20px;
+}
+p {
+  margin-bottom: 16px;
+}
+
+/*  HLAVIČKA  */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  /* aby logo a menu nebyly nalepené na horním okraji */
+  padding-top: 20px;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  max-width: 115px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+nav a {
+  color: var(--text-strong);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  /* trvalá rezerva místa pro linku, aby text při hoveru neposkakoval */
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover {
+  /* místo oranžové (splývala by s oranžovým pozadím hero) jen podtržení */
+  border-bottom-color: var(--text-strong);
+}
+
+nav a[aria-current="page"] {
+  border-bottom-color: var(--text-strong);
+}
+
+/* hamburger tlačítko */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: var(--text-strong);
+  border-radius: 2px;
+}
+
+/*  HERO / ÚVOD  */
+.hero {
+  background: linear-gradient(180deg, var(--accent), var(--accent-hover));
+  color: #20160f;
+  text-align: center;
+  padding: 200px 20px 140px;
+  /* kotva pro diagonální řez (::after) */
+  position: relative;
+}
+
+.hero .eyebrow {
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: var(--font-heading);
+  letter-spacing: 4px;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  /* bílá a větší než výchozí h1 */
+  color: var(--text-strong);
+  font-size: 56px;
+  margin-bottom: 32px;
+}
+
+.hero .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--text-strong);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+  padding: 14px 44px;
+  border: 2px solid var(--text-strong);
+  border-radius: 999px;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.hero .btn svg {
+  /* ikona šipky přebírá barvu textu přes currentColor */
+  width: 18px;
+  height: 18px;
+  stroke-width: 2.5;
+}
+
+.hero .btn:hover {
+  background-color: var(--text-strong);
+  color: var(--accent);
+}
+
+.hero::after {
+  /* diagonální řez na spodní hraně hera - přechod do další sekce */
+  content: "";
+  position: absolute;
+  bottom: -1px; /* zamezí vlasové spáře mezi hero a další sekcí */
+  left: 0;
+  width: 100%;
+  height: 100px;
+  background-color: var(--bg);
+  clip-path: polygon(0 100%, 100% 0, 100% 100%);
+}
+
+/*  RESPONZIVITA HLAVIČKY A HERO SEKCE  */
+@media (max-width: 900px) {
+  nav {
+    /* skryto, dokud se nerozbalí přes hamburger */
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-dark);
+  }
+
+  nav.otevrena {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px 20px 20px;
+  }
+
+  nav a {
+    display: block;
+    padding: 12px 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero {
+    padding: 130px 20px 70px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero::after {
+    /* na mobilu nižší, aby diagonála nebyla příliš strmá */
+    height: 40px;
+  }
 }
