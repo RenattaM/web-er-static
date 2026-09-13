@@ -594,8 +594,9 @@ footer p {
 }
 
 footer a {
-  color: var(--text-muted);
-  text-decoration: none;
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 footer a:hover {
@@ -875,6 +876,104 @@ details p {
   margin-bottom: 0;
 }
 
+/*  COOKIE LIŠTA  */
+.cookie-lista {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  /* vyšší než hlavička (z-index: 10) */
+  z-index: 20;
+  background-color: var(--bg-dark);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cookie-lista__obsah {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.cookie-lista__obsah p {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 0;
+}
+
+.cookie-lista__obsah > a,
+.cookie-lista__obsah > span {
+  flex-shrink: 0;
+  font-size: 14px;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.cookie-lista__obsah > a:hover {
+  color: var(--accent);
+}
+
+.cookie-lista__tlacitka {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.cookie-lista__tlacitka button {
+  /* stejný tvar jako .btn, jen menší */
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 15px;
+  padding: 10px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+#cookie-prijmout {
+  /* oranžové plné */
+  background-color: var(--accent);
+  border: 2px solid var(--accent);
+  color: var(--bg-dark);
+}
+
+#cookie-prijmout:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+#cookie-odmitnout {
+  /* s oranžovým rámečkem a průhledné */
+  background: transparent;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+}
+
+#cookie-odmitnout:hover {
+  background-color: var(--accent);
+  color: var(--bg-dark);
+}
+
+#cookie-nastaveni {
+  /* v patičce vypadá jako odkaz */
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: var(--text);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+#cookie-nastaveni:hover {
+  color: var(--accent);
+}
+
 /*  RESPONZIVITA HLAVIČKY A HERO SEKCE  */
 @media (max-width: 900px) {
   header {
@@ -983,6 +1082,22 @@ details p {
   .dotazy::after {
     /* na mobilu kratší zkosení */
     height: 36px;
+  }
+
+  .cookie-lista__obsah {
+    /* obsah pod sebou */
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .cookie-lista__tlacitka {
+    flex-direction: column;
+  }
+
+  .cookie-lista__tlacitka button {
+    /* tlačítka roztažená na šířku */
+    width: 100%;
   }
 }
 

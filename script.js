@@ -30,3 +30,34 @@ window.addEventListener("scroll", () => {
     header.classList.remove("scrolled");
   }
 });
+
+// Cookie lišta - souhlas s analytickými cookies (Google Analytics)
+const cookieLista = document.getElementById("cookie-lista");
+const cookiePrijmout = document.getElementById("cookie-prijmout");
+const cookieOdmitnout = document.getElementById("cookie-odmitnout");
+const cookieNastaveni = document.getElementById("cookie-nastaveni");
+
+const cookieSouhlas = localStorage.getItem("cookie-souhlas");
+
+if (!cookieSouhlas) {
+  // souhlas ještě nebyl udělen ani odmítnut - zobrazit lištu
+  cookieLista.hidden = false;
+} else if (cookieSouhlas === "ano") {
+  // souhlas byl dřív udělen - rovnou povolit analytiku
+  gtag("consent", "update", { analytics_storage: "granted" });
+}
+
+cookiePrijmout.addEventListener("click", () => {
+  localStorage.setItem("cookie-souhlas", "ano");
+  gtag("consent", "update", { analytics_storage: "granted" });
+  cookieLista.hidden = true;
+});
+
+cookieOdmitnout.addEventListener("click", () => {
+  localStorage.setItem("cookie-souhlas", "ne");
+  cookieLista.hidden = true;
+});
+
+cookieNastaveni.addEventListener("click", () => {
+  cookieLista.hidden = false;
+});

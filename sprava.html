@@ -29,6 +29,21 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-6X2FGMSDNS"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("consent", "default", {
+        analytics_storage: "denied",
+      });
+      gtag("config", "G-6X2FGMSDNS");
+    </script>
   </head>
   <body>
     <header>
@@ -323,9 +338,25 @@
           <a href="zasady-ochrany-osobnich-udaju.html"
             >Zásady ochrany osobních údajů</a
           >
+          · <button type="button" id="cookie-nastaveni">Nastavení cookies</button>
         </p>
       </div>
     </footer>
+    <div class="cookie-lista" id="cookie-lista" hidden>
+      <div class="cookie-lista__obsah">
+        <p>
+          Web používá cookies. Nezbytné pro jeho fungování, analytické pro
+          měření návštěvnosti — ty spustím jen s vaším souhlasem.
+        </p>
+        <div class="cookie-lista__tlacitka">
+          <button type="button" id="cookie-odmitnout">Odmítnout</button>
+          <button type="button" id="cookie-prijmout">Přijmout</button>
+        </div>
+        <a href="zasady-ochrany-osobnich-udaju.html"
+          >Zásady ochrany osobních údajů</a
+        >
+      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
