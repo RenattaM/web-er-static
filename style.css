@@ -17,6 +17,11 @@ img {
   --accent-mid: #ca7843;
   --accent-hover: #b5663a;
 
+  /* Přechod v hero a CTA - tmavší než akcent, aby prošel kontrast s bílým textem */
+  --hero-od: #c2662f;
+  --hero-stred: #8a4224;
+  --hero-do: #6e3d20;
+
   /* Pozadí */
   --bg: #1c2025;
   --bg-dark: #141719;
@@ -164,11 +169,11 @@ nav a[aria-current="page"] {
 .hero {
   background: linear-gradient(
     100deg,
-    var(--accent) 0%,
-    var(--accent-mid) 55%,
-    var(--accent-hover) 100%
+    var(--hero-od) 0%,
+    var(--hero-stred) 50%,
+    var(--hero-do) 100%
   );
-  color: #20160f;
+  color: var(--text-strong);
   text-align: center;
   padding: 200px 20px 140px;
   /* kotva pro diagonální řez (::after) */
@@ -224,6 +229,11 @@ nav a[aria-current="page"] {
 .btn:hover {
   background-color: var(--text-strong);
   color: var(--accent);
+}
+
+.hero .btn:hover {
+  /* var(--accent) na bílém pozadí by byl na ztmavené oranžové málo čitelný */
+  color: var(--hero-stred);
 }
 
 /* varianta tlačítka pro tmavé pozadí mimo hero */
@@ -547,9 +557,9 @@ nav a[aria-current="page"] {
   /* stejný přechod jako hero */
   background: linear-gradient(
     100deg,
-    var(--accent) 0%,
-    var(--accent-mid) 55%,
-    var(--accent-hover) 100%
+    var(--hero-od) 0%,
+    var(--hero-stred) 50%,
+    var(--hero-do) 100%
   );
   text-align: center;
   padding: 80px 0;
