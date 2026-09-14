@@ -26,10 +26,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css?v=2" />
     <script
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-6X2FGMSDNS"
@@ -117,7 +122,12 @@
       </section>
       <section class="jak-to-funguje">
         <div class="container">
-          <img src="img/work-scaled.jpg" alt="Ukázka práce na tvorbě webu" />
+          <img
+            src="img/work-scaled.jpg"
+            alt="Ukázka práce na tvorbě webu"
+            width="1707"
+            height="2560"
+          />
           <div>
             <p class="eyebrow">Jak to funguje</p>
             <h2>Řeknete mi, co děláte. Zbytek vyřeším za vás.</h2>
@@ -326,6 +336,9 @@
                 <img
                   src="img/reference-mk-bike-shop.jpg"
                   alt="Náhled webu MK Bike Shop"
+                  width="1200"
+                  height="750"
+                  loading="lazy"
                 />
                 <h3>MK Bike Shop</h3>
                 <p>
@@ -343,6 +356,9 @@
                 <img
                   src="img/reference-cas-pro-tebe.jpg"
                   alt="Náhled webu Čas pro tebe"
+                  width="1400"
+                  height="629"
+                  loading="lazy"
                 />
                 <h3>Čas pro tebe</h3>
                 <p>
@@ -360,6 +376,9 @@
                 <img
                   src="img/reference-ik-uklid.jpg"
                   alt="Náhled webu IK Úklid"
+                  width="1200"
+                  height="750"
+                  loading="lazy"
                 />
                 <h3>IK Úklid</h3>
                 <p>
@@ -419,6 +438,6 @@
         >
       </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
   </body>
 </html>
