@@ -482,7 +482,7 @@ nav a[aria-current="page"] {
 
 /*  SEKCE REFERENCE  */
 .reference {
-  padding: 90px 0;
+  padding: 70px 0;
 }
 
 .reference .container {
@@ -498,14 +498,16 @@ nav a[aria-current="page"] {
 .reference h2 {
   /* stejná barva jako nadpis v .jak-to-funguje */
   color: var(--accent);
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .reference-karty {
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .reference-karta {
@@ -529,10 +531,9 @@ nav a[aria-current="page"] {
 
 .reference-karta img {
   width: 100%;
-  height: 200px;
+  height: auto;
+  aspect-ratio: 1200 / 750;
   object-fit: cover;
-  /* zobrazí horní část náhledu webu */
-  object-position: top;
   border-radius: 8px;
   margin-bottom: 20px;
   transition: transform 0.2s ease;
